@@ -1,0 +1,9 @@
+.itemsCard {
+    max-width: fit-content;
+    border-radius: 9px;
+    border: 2px solid orchid;
+}
+.productImg {
+    border-radius: 9px;
+    border: 2px solid orchid;
+}

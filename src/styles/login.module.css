@@ -1,0 +1,13 @@
+.hr {
+    width: 430px;
+    height: 2px;
+    position: relative
+}
+.hr__main::after {
+    padding: 2px;
+    position: absolute;
+    content: "OR";
+    background-color: #fff;
+    top: -0.1px;
+    right: 200px;
+}

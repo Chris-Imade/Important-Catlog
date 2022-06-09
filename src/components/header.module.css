@@ -1,0 +1,53 @@
+.border__line {
+    width: 100vw;
+    height: 1px;
+    background-color: #d3d3d3;
+}
+.ul {
+    display: flex;
+    justify-content: space-between;
+    min-width: 20rem;
+    position: relative;
+}
+
+.searchInput {
+    border-radius: 9px;
+    border: 1px solid rgb(230, 230, 230);
+    outline: none;
+    outline-width: 0;
+    color: rgb(169, 169, 169);
+}
+.active {
+    color: rgb(247, 88, 88);
+    font-weight: 600;
+}
+/* .active::after {
+    position: absolute;
+    content: "";
+    width: 2.7rem;
+    height: 2px;
+    background-color: rgb(247, 88, 88);
+    top: 25px;
+    left: 0.5px;
+} */
+.cart {
+    margin-left: 90px;
+    border-radius: 9px;
+    border: 1px solid rgb(230, 230, 230);
+    padding: .5rem;
+}
+.cart__basket {
+    margin-right: 2rem;
+    padding-right: 1.3rem;
+    border-right: 1px solid rgb(230, 230, 230);
+    
+}
+.nav {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+}
+.searchIcon {
+    margin-left: 3.5rem;
+}

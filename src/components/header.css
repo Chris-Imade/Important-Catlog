@@ -1,0 +1,13 @@
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    padding-left: 3rem !important;
+}
+.css-i4bv87-MuiSvgIcon-root {
+    display: none !important;
+}
+.css-qbcv7e-MuiAutocomplete-root .MuiOutlinedInput-root .MuiAutocomplete-input {
+    padding: 7.5px 4px 7.5px 50px !important;
+}
+.MuiAutocomplete-hasPopupIcon.css-qbcv7e-MuiAutocomplete-root .MuiOutlinedInput-root, .MuiAutocomplete-hasClearIcon.css-qbcv7e-MuiAutocomplete-root .MuiOutlinedInput-root {
+    padding-right: 39px;
+    border-radius: 19px !important;
+}

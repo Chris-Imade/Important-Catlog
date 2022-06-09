@@ -1,0 +1,15 @@
+.loaderBody {
+    min-width: 15rem;
+}
+.LoaderBtn {
+    width: 40%;
+    height: 2rem;
+}
+.LoaderText {
+    width: 90%;
+    height: 3rem;
+}
+.LoaderText2 {
+    width: 90%;
+    height: 1rem;
+}

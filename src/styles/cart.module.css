@@ -1,0 +1,21 @@
+.cartTitle {
+    font-weight: 600;
+    font-size: 3rem;
+}
+.cartLoading {
+    height: 10rem;
+    width: 100%;
+    background-color: rgb(245, 245, 245);
+}
+.cartLoadingTxt {
+    width: 25rem;
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 1.5rem;
+}
+.cartLoadingTxt2 {
+    width: 15rem;
+    margin-left: 15px;
+    margin-top: 10px;
+    height: 5.5rem;
+}

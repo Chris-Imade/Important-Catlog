@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+h4 {
+    color: #831161;
+}
+.login__left > p {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 23.76px;
+    text-align: center;
+    color: #B2AFAF;
+}
+.login__left > .btn__google {
+    outline: none;
+    outline-width: 0;
+    border: none;
+    width: 403px;
+    height: 53px;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0px 4px 5px 0px #0000001A;
+    border-radius: 9px;
+}
+.login {
+    display: flex;
+    background-color: white;
+}
+.login__left {
+    flex: 0.6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login__right {
+    flex: 0.4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textImage {
+    position: absolute;
+    z-index: 100000;
+    align-self: center;
+}
+
+
+.email {
+    display: flex;
+    flex-direction: column;
+}
+.password {
+    display: flex;
+    flex-direction: column;
+}
+#email {
+    outline: none;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #F6F6F6;
+}
+#password {
+    outline: none;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #F6F6F6;
+}
+label {
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+}
+.login__btn > button {
+    background-color: #4E0037;
+    color: white;
+    width: 430px;
+    height: 48px;
+    border-radius: 9px;
+    outline-width: 0;
+    outline: none;
+    margin: 25px 0 27px 0;
+}.login__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signup_p {
+    position: relative;
+    margin-top: -2rem;
+    color: #8B8B8B;
+}
+.curly__image {
+    position: absolute;
+    margin-top: 30px;
+    object-fit: contain;
+}
+
+/* .login__right > img {
+    width: auto;
+    height: 100vh;
+    background-size: 100% 100%;
+} */
+.login__right {
+    /* display: flex;
+    justify-content: flex-end;
+    align-items: center; */
+    background-image: url('../public/rightBg.png');
+    background-size:contain;
+    background-position:center;
+    object-fit: contain;
+    height: 100vh;
+}

@@ -1,0 +1,237 @@
+/* #title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+}
+.navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 942px;
+}
+.page__checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.shipping{
+    margin-bottom: 8px;
+    width: 100%;
+}
+.left__aligned {
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pageTitle {
+    text-align: center !important;
+}
+.new__address {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.new__address > input {
+    margin-right: 20px;
+    background-color: #831161;
+}
+input[type='radio']:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid #831161;
+}
+
+/*gives radio button orange fill when clicked*/
+/*
+input[type='radio']:checked:after {
+    width: 8px;
+    height: 8px;
+    border-radius: 15px;
+    top: -7px;
+    left: 1.6px;
+    position: relative;
+    background-color: #831161;
+    content: '';
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid  #831161;
+}
+.row1 {
+    display: flex;
+}
+.first_name {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.last__name {
+    display: flex;
+    flex-direction: column;
+}
+.street__address {
+    display: flex;
+    flex-direction: column;
+}
+.row2 {
+    display: flex;
+}
+.phone {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+.zipcode {
+    display: flex;
+    flex-direction: column;
+}
+.state {
+    display: flex;
+    flex-direction: column;
+}
+#first__name {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    height: 40px;
+    padding-left: 10px;
+}
+#last__name {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    height: 40px;
+    padding-left: 10px;
+}
+#street__id {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    padding-left: 10px;
+    height: 40px;
+}
+#phone {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    height: 40px;
+    padding-left: 10px;
+}
+#zipcode {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    height: 40px;
+    padding-left: 10px;
+}
+#state {
+    outline: none;
+    outline-width: 0;
+    border-radius: 6px;
+    border: 1px solid #b8b8b8;
+    padding-left: 10px;
+    height: 40px;
+    max-width: 250px;
+}
+#cancel {
+    font-size: 18px;
+    font-weight: 500;
+    font-style: normal;
+    color: #7C7777;
+    box-shadow: 0px 4px 11px -2px #0000000D;
+    border: none;
+    cursor: pointer;
+    width: 148px;
+    height: 44px;
+    border-radius: 6px;
+}
+
+#use {
+    font-style: normal;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    color: white;
+    background-color: #DD3A3F;
+    width: 222px;
+    height: 44px;
+    border-radius: 6px;
+    outline-width: 0;
+    border: none;
+    margin-left: 30px;
+    box-shadow: 1px 4px 21px -1px #52BA004D;
+}
+.cart__main {
+    display: flex;
+}
+.main__left {
+    flex: 0.6;
+    margin: 0 50px 0 0;
+}
+.main__righ {
+    flex: 0.4;
+}
+/* Right area */
+/*
+#total {
+    font-size: 12px;
+}
+.content {
+    /* margin-right: 50px; */
+    /*
+    border-radius: 9px;
+    width: 20rem;
+    height: 25rem;
+    margin-top: 30px;
+    background-color: #fcfcfc;
+    padding: 20px 30px;
+}
+.place__order {
+    text-align: center;
+    background-color: #52BA00;
+    padding: .3rem 1rem;
+    color: #ffffff;
+    border-radius: 6px;
+}
+.btn__place--order {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.order__placing--text {
+    font-size: 11px;
+    color: #7C7777;
+    text-align: center;
+}
+#space {
+    width: 120px;
+}
+tr {
+    color: #3D3B3C;
+    font-family: Axiforma;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px;
+    height: 2rem;
+}
+hr{
+    margin: 12px 0;
+    border-color: #CECECE;
+} */

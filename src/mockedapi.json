@@ -1,0 +1,13 @@
+[
+    {
+        "itemPrice":2500,
+        "id":"African Elegance",
+        "itemName":"African Elegance",
+        "imageUrl":["https://i.ibb.co/drfXXvz/8-K2-A8229-min.jpg"],
+        "itemDesc":"Nice looking dress","category":["women"]
+    },
+    {
+        "itemDesc":"Nicee bags like this can only be found at genius hub catalog",
+        "category":["women"],
+        "itemName":"Bag101",
+        "imageUrl":["https://cdn.chec.io/merchants/38794/assets/3DtExjtqR7mpGa2K|item1.png"],"itemPrice":15000,"id":"Bag101"},{"id":"Classic Gown","itemPrice":4500,"imageUrl":["https://i.ibb.co/6XncR6r/8-K2-A8250-min.jpg"],"itemName":"Classic Gown","category":["women"]},{"itemDesc":"Official Eelegance","itemName":"Elegant gown","itemPrice":2599,"imageUrl":["https://i.ibb.co/vwws3nn/8-K2-A8252-min.jpg"],"id":"Elegant gown","category":["women","kids"]},{"category":["women","kids"],"itemPrice":5090,"id":"Gown","itemName":"Gown","imageUrl":["https://i.ibb.co/ZBDkWSK/8-K2-A8260-min.jpg"],"itemDesc":"Nice lovely gown"},{"id":"Japanese like ankara","imageUrl":["https://cdn.chec.io/merchants/38794/assets/yqkeEG2f7bgdNqup%7C8K2A9710.JPG"],"itemPrice":2000,"category":["women","kids","men"],"itemName":"Japanese like ankara","itemDesc":"Japanese outfit in ankara"},{"id":"Match skirt and blouse","imageUrl":["https://i.ibb.co/ZBDkWSK/8-K2-A8260-min.jpg"],"category":["women"],"itemDesc":"Nice overflow looking dress","itemPrice":3500,"itemName":"Match skirt and blouse"},{"category":["women"],"id":"Nice Ankara","itemDesc":"Another wonder wear","itemName":"Nice Ankara","itemPrice":2000,"imageUrl":["https://i.ibb.co/ZBDkWSK/8-K2-A8260-min.jpg"]},{"imageUrl":["https://i.ibb.co/M2HCJ0W/8-K2-A8296-min.jpg"],"category":["women","kids"],"itemDesc":"cutting edge design from genius hub","itemPrice":4000,"id":"Nice Ankara coded","itemName":"Nice Ankara coded"},{"itemDesc":"nice looking shirts","itemPrice":2990,"imageUrl":["https://cdn.chec.io/merchants/38794/assets/3DtExjtqR7mpGa2K|item1.png"],"id":"Shirt","women":["kids","women"],"itemName":"Shirt"},{"itemPrice":1200,"itemDesc":"Just another amazing design from genius hub collections","id":"To be properly named","imageUrl":["https://i.ibb.co/DGgcg75/8-K2-A8271-min.jpg"],"itemName":"To be properly named","category":["women","kids"]},{"itemDesc":"Coolest weavon cap ever","itemPrice":9999,"category":["women"],"imageUrl":["https://i.ibb.co/zrwGfdw/8-K2-A8305-min.jpg"],"itemName":"Weavon Cap","id":"Weavon Cap"}]

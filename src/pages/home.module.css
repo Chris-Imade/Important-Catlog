@@ -1,0 +1,88 @@
+.banner {
+    background-color: #DD3A3F;
+    border-radius: 8px;
+}
+.underneath {
+    position: absolute;
+    z-index: -100;
+    left: 0;
+}
+.img {
+    width: fit-content;
+    border-radius: 14px;
+}
+.sectionMain {
+    background-color: hsla(336, 100%, 99%, 0.756);
+    border-radius: 20px;
+    margin: 20px;
+}
+.mainTxt {
+    width: 28rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-size: 1.952rem;
+}
+.rightMain {
+    flex: 0.5;
+}
+.leftMain {
+    flex: 0.5;
+}
+.couter {
+    color: #58013F;
+}
+.bottomTxtLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.conterStar {
+    width: min-2rem;
+}
+.vectorRound {
+    position: absolute;
+    z-index: -1000;
+    left: 0;
+}
+.footerIntro {
+    background-color: #212020;
+}
+.viewAll {
+    background-color: #5ACC00;
+    box-shadow: 1px 4px 21px -1px #52BA004D;
+    border-radius: 6px;
+}
+.blog {
+    color: #FECC00;
+    font-size: x-large;
+    font-weight: 900;
+}
+.news {
+    color: #fff;
+    font-weight: 400;
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+.news::after {
+    content: url("../public/Group 23.png");
+    position: absolute;
+    top: 4.4rem;
+    width: 4rem;
+    height: 4rem;
+    right: 0.2px;
+}
+.rightFooterIntro {
+    flex: 0.5;
+}
+.curly__image {
+    position: absolute;
+    margin-top: 0;
+    object-fit: contain;
+}
+.leftFooterIntro {
+    height: 100%;
+    width: 100%;
+    flex: 0.5;
+}

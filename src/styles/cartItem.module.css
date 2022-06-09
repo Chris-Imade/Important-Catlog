@@ -1,0 +1,16 @@
+.left {
+    flex: 0.5;
+}
+.right {
+    flex: 0.5;
+}
+.cartImage {
+    max-width: 8rem;
+    border-radius: .8rem;
+    border: 1px solid rgb(175, 175, 175);
+}
+@media only screen and (min-width: 768px) {
+    .cartItemParent {
+        width: 755px;
+    }
+}
