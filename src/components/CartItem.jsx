@@ -8,11 +8,12 @@ export const CartItem = ({ id, item, onUpdateCartQty, onRemoveFromCart }) => {
     const handleRemoveFromCart = () => onRemoveFromCart();
     const dispatch = useDispatch();
     const { addPrice, subPrice, updateTotalPrice } = bindActionCreators(allActions, dispatch);
-    const cart = useSelector(state => state.reducer.cart);
+    // const cart = useSelector(state => state.reducer.cart);
+   
     return (
         <div className={`${styles.cartItemParent} border-2 border-gray-300 rounded-2xl m-6 p-4 flex flex-col md:flex-row`}>
             <div className={`${styles.left} flex flex-col lg:flex-row`}>
-                <div><img className={styles.cartImage} src={`${item.imageUrl}`} alt={item.itemName} /></div>
+                <div><img className={styles.cartImage} src={`${item.imageUrl[0]}`} alt={item.itemName} /></div>
                 <div className='flex flex-col lg:justify-around item-start lg:ml-8 '>
                     <h6 className='text-gray-500'>Genius Hub Product</h6>
                     <h4  className='text-4xl text-gray-900 font-bold'>{item.itemName}</h4>

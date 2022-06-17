@@ -71,35 +71,33 @@ function App() {
 
     // BEM
     <div className="app">
-            return (
-                <Router>
-                      <Header />
-                      <Switch>
-                        <Route exact path="/">
-                          <Home />
-                        </Route>
-                        <Route exact path="/checkout">
-                          <Checkout />
-                        </Route>
-                        
-                        <Route exact path="/cart">
-                          <Cart products={products} />
-                        </Route>
-                        <Route exact path="/login">
-                          <Login />
-                        </Route>
-                        <Route exact path="/products">
-                        <Products  products={products} />
-                        </Route>
-                        <Route exact path="/signup">
-                          <Signup />
-                        </Route>
-                        <Route exact path="/product-details/:productId">
-                          <ProductDetail />
-                        </Route>
-                      </Switch>
-                    </ Router>
-            )
+      <Router>
+            <Header />
+            <Switch>
+              <Route exact path="/">
+                <Home />
+              </Route>
+              <Route exact path="/checkout">
+                <Checkout />
+              </Route>
+              
+              <Route exact path="/cart">
+                <Cart products={products} />
+              </Route>
+              <Route exact path="/login">
+                <Login />
+              </Route>
+              <Route exact path="/products">
+              <Products  products={products} />
+              </Route>
+              <Route exact path="/signup">
+                <Signup />
+              </Route>
+              <Route exact path="/product-details/:productId">
+                <ProductDetail />
+              </Route>
+            </Switch>
+          </ Router>
     </div>
   );
 }

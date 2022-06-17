@@ -22,7 +22,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 const ProductDetail = () => {
     const location = useLocation();
     // const [productImages, setProductImages] = useState([]);/
-    const [displayModal, setDisplayModal] = useState(true);
+    const [displayModal, setDisplayModal] = useState(false);
     const [cartProduct, setCartProduct] = useState({});
     const [products, setProducts] = useState();
     const [cartProductRelated, setCartProductRelated] = useState({});

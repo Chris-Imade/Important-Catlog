@@ -43,6 +43,10 @@ const Cart = ({ onUpdateCartQty, onRemoveFromCart }) => {
   //   return 
   // }
   
+  const clearLocalStoarage = () => {
+    window.localStorage.clear();
+    window.location.reload();
+  }
 
 
       return (
@@ -93,9 +97,12 @@ const Cart = ({ onUpdateCartQty, onRemoveFromCart }) => {
                   <h4 className='text-3xl text-gray-900 font-semibold'>Total price: <span className='text-orange-600'>{content}</span></h4>
                   <p>Delivery fee not included</p>
                 </div>
-                <div className='flex flex-col lg:flex-row justify-center items-center mt-20'>
-                  <Link to="/products"><button type='button' className='lg:mr-4 text-gray-900 font-semibold shadow-xl py-4 px-6 rounded-md'>Continue Shopping</button></Link>
-                  <Link to="/checkout"><button type='button' style={{ backgroundColor: "#52BA00"}} className='lg:ml-4 text-white font-semibold shadow-xl py-4 px-6 rounded-md'>Proceed to check out</button></Link>
+                <div className='flex flex-col justify-center items-center mt-20'>
+                  <div>
+                    <Link to="/products"><button type='button' className='lg:mr-4 text-gray-900 font-semibold shadow-xl py-4 px-6 rounded-md'>Continue Shopping</button></Link>
+                    <Link to="/checkout"><button type='button' style={{ backgroundColor: "#52BA00"}} className='lg:ml-4 text-white font-semibold shadow-xl py-4 px-6 rounded-md'>Proceed to check out</button></Link>
+                  </div>
+                  <button onClick={() => clearLocalStoarage()} type="button" className='bg-orange-600 py-4 shadow-xl font-semibold rounded-md text-white mt-6 w-full'>Clear All</button>
                 </div>
               </div>
             </div>

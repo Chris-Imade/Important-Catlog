@@ -80,7 +80,7 @@ const subPrice = (payloadData) => {
         const cart = JSON.parse(localStorage.getItem("cart")); 
         // get the particular item form localStorage 
         const cartItem = cart.filter((item) => item.id === payloadData);
-        console.log(JSON.stringify(cartItem));
+        // console.log(JSON.stringify(cartItem));
         // upadate item count
         cartItem[0].count = cartItem[0].count - 1;
         // update item price
@@ -94,6 +94,9 @@ const subPrice = (payloadData) => {
         const newCart = [...cartWithoutEdit, cartItem[0]];
         // override everything in localstoreage with the new updates
         localStorage.setItem("cart", JSON.stringify(newCart));
+        if(cartItem[0].count <= 0) {
+            window.location.reload();
+        }
 
     return (dispatch) => {
         dispatch({

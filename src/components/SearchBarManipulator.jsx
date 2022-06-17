@@ -48,7 +48,7 @@ const SearchBarManipulator = () => {
                                 <Autocomplete
                                     onChange={(event, value) => updateQueryString(value.label)}
                                     onFocus={() => updateIntFocus(true)}
-                                    onBlur={() => updateQueryString("")}
+                                    // onBlur={() => updateQueryString("")}
                                     id="catlog-product"
                                     disablePortal
                                     options={list}
