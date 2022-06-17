@@ -10,7 +10,9 @@ let INITIAL_STATE = {
   overallPrice: 0,
   overallCount: 0,
   checkoutDetails: {},
-  productDetail: {}
+  productDetail: {},
+  labels: [],
+  internetError: false
 }
 
 if (localStorage.getItem("cart")) {
@@ -47,10 +49,7 @@ const catlogState = (state = INITIAL_STATE, action) => {
     case "LOAD_PRODUCTS": {
       return {
         ...state,
-        products: [
-          ...state.products,
-          action.payload
-        ]
+        products: action.payload
       }
     }
     
@@ -126,6 +125,18 @@ const catlogState = (state = INITIAL_STATE, action) => {
         productDetail: {
           ...action.payload
         }
+      }
+    }
+    case "SET_LABELS": {
+      return {
+        ...state,
+        labels: action.payload
+      }
+    }
+    case "SET_NETWORK_ERROR": {
+      return {
+        ...state,
+        internetError: action.payload
       }
     }
     default:

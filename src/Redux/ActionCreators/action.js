@@ -169,6 +169,22 @@ const setProductDetail = (payloadData) => {
         })
     }
 }
+const setLabel = (payloadData) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SET_LABELS",
+            payload: payloadData
+        })
+    }
+}
+const setInternetError = (payloadData) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SET_NETWORK_ERROR",
+            payload: payloadData
+        })
+    }
+}
 export const allActions = {
     addToCart,
     updateIntFocus,
@@ -180,5 +196,7 @@ export const allActions = {
     updateTotalPrice,
     setTotalCount,
     setCheckoutDetails,
-    setProductDetail
+    setProductDetail,
+    setLabel,
+    setInternetError
 }

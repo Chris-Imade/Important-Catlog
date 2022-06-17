@@ -30,16 +30,14 @@ const ProductDetail = () => {
     const dispatch = useDispatch();
     const cart = useSelector(state => state.reducer.cart);
     const productDetail = useSelector(state => state.reducer.productDetail);
-    // console.log(productDetail);
+    console.log("productDetail: " + JSON.stringify(productDetail.imageUrl));
     let totalItems = cart.line_items.length;
 
-    // console.log(productDetail);
   // Dispatches OR SETTERS
   const { addToCart, setProductDetail } = bindActionCreators(allActions, dispatch);
 
     const { productId } = useParams();
     const { imageUrl } = productDetail;
-    console.log(imageUrl);
 
     // console.log(productId);
     
@@ -47,11 +45,12 @@ const ProductDetail = () => {
         try {
           onSnapshot(doc(db, "products", productId), (doc) => {
             setProductDetail(doc.data());
+            // console.log(doc.data());
         });
         } catch (error) {
           console.log(error);
         }
-      } 
+      }
 
         const fetchProducts = () => {
                 const q = query(collection(db, "products"));
@@ -274,31 +273,37 @@ const ProductDetail = () => {
             </div>
             </div>
 
-            {displayModal && (
-                <div className={`${styles.modalOverlay}`}>
-                 <div className={`${styles.modalContent}`}>
-                   <div className={`w-full flex justify-between mt-8`}>
-                     <button className="hover:cursor-pointer" onClick={() => setDisplayModal(false)} type="button">
-                       <span className={`${styles.cancel}`}><CancelIcon style={{ color: 'white' }} /></span>
-                     </button>
-                   </div>
-                   {/* Product detail images */}
-                   <div className={`${styles.productDetailRight} w-full h-full flex flex-col items-center justify-center`}>
-                    <div className={`${styles.rightLeft}`}>
-                        <img className="hover:cursor-pointer" onClick={() => setDisplayModal(true)} src={productDetail.imageUrl[index]} alt={productDetail.itemName} />
+            <div>
+                {imageUrl && (
+                    <div>
+                            {displayModal && (
+                            <div className={`${styles.modalOverlay}`}>
+                            <div className={`${styles.modalContent}`}>
+                            <div className={`w-full flex justify-between mt-8`}>
+                                <button className="hover:cursor-pointer" onClick={() => setDisplayModal(false)} type="button">
+                                <span className={`${styles.cancel}`}><CancelIcon style={{ color: 'white' }} /></span>
+                                </button>
+                            </div>
+                                {/* Product detail images  */}
+                            <div className={`${styles.productDetailRight} w-full h-full flex flex-col items-center justify-center`}>
+                                <div className={`${styles.rightLeft}`}>
+                                    <img className="hover:cursor-pointer" onClick={() => setDisplayModal(true)} src={productDetail.imageUrl[index]} alt={productDetail.itemName} />
+                                </div>
+                                <div className={`${styles.rightRight} mt-12 w-full`}>
+                                    <ul className={`${""} h-full flex justify-around`}>
+                                        <li onMouseOver={() => setIndex(0)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[0]} alt="" /></li>
+                                        <li onMouseOver={() => setIndex(1)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[1]} alt="" /></li>
+                                        <li onMouseOver={() => setIndex(2)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[2]} alt="" /></li>
+                                        <li onMouseOver={() => setIndex(3)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[3]} alt="" /></li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                        )}
                     </div>
-                    <div className={`${styles.rightRight} mt-12 w-full`}>
-                        <ul className={`${""} h-full flex justify-around`}>
-                            <li onMouseOver={() => setIndex(0)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[0]} alt="" /></li>
-                            <li onMouseOver={() => setIndex(1)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[1]} alt="" /></li>
-                            <li onMouseOver={() => setIndex(2)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[2]} alt="" /></li>
-                            <li onMouseOver={() => setIndex(3)} className={`${styles.imageOptions} cursor-pointer mb-4 w-20 h-20 overflow-hidden rounded-md border-2 border-gray-600`}><img src={productDetail.imageUrl[3]} alt="" /></li>
-                        </ul>
-                    </div>
-                    </div>
-                 </div>
-               </div>
-            )}
+                )}
+            </div>
 
      <Footer />
            

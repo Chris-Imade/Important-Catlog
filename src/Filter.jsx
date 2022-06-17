@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 // import commerce from './lib/commerce';
 import { ProductItem, SkeletonLoader } from './components/index';
 // import { CodeSharp } from '@material-ui/icons';
-import { collection, query, where, getDocs, onSnapshot } from "firebase/firestore";
+import { collection, query, where, onSnapshot } from "firebase/firestore";
 import { db } from "./firebase";
+import { v4 as uuidv4 } from 'uuid';
 
 
 const Filter = ({ catMen, catWomen, catKids, onAddToCart, highToLow }) => {
@@ -101,9 +102,9 @@ const Filter = ({ catMen, catWomen, catKids, onAddToCart, highToLow }) => {
             return <SkeletonLoader />
         }
         // Products function
-        const RenderProuctsSrceen = ({ products }) => {
+        const RenderProductsSrceen = ({ products }) => {
             return products.map((product) => (
-                    <React.Fragment key={product.id}>
+                    <React.Fragment key={uuidv4()}>
                         <ProductItem product={product} onAddToCart={onAddToCart} />
                     </React.Fragment>
                 ));
@@ -113,7 +114,7 @@ const Filter = ({ catMen, catWomen, catKids, onAddToCart, highToLow }) => {
         if (!products.length || products === undefined || products.length === undefined) {
             return <RenderLoadingScreen />
         } else {
-            return <RenderProuctsSrceen products={products} />
+            return <RenderProductsSrceen products={products} />
         }
 }
 

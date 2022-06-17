@@ -22,6 +22,7 @@ const Products = () => {
         catWomen: false,
         catKids: false
     });
+    console.log(option.select);
     const [optionSelect, setOptionSelect] = useState({
         selectSort: "",
         newest: false,
@@ -33,7 +34,14 @@ const Products = () => {
 
 
     const handleOption = () => {
-        if (option.select === "All") updateIntFocus(false);
+        if (option.select === "All") {
+            updateIntFocus(false);
+            return setOption({
+                catMen: false,
+                catWomen: false,
+                catKids: false,
+            });
+        }
         if (option.select === "Men") {
             updateIntFocus(false);
             return setOption({
