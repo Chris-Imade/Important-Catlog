@@ -8,7 +8,8 @@ import {
   Cart,
   Login,
   Signup,
-  ProductDetail
+  ProductDetail,
+  Contact
 } from './pages/index';
 import Checkout from './pages/CheckoutForm/Checkout/Checkout';
 
@@ -95,6 +96,9 @@ function App() {
               </Route>
               <Route exact path="/product-details/:productId">
                 <ProductDetail />
+              </Route>
+              <Route exact path="/contact">
+                <Contact />
               </Route>
             </Switch>
           </ Router>
