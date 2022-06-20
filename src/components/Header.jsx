@@ -26,7 +26,7 @@ const Header = () => {
                         <Link to="/"><img src={Logotxt} alt="Logo2" /></Link>
                     </div>
                     <div className="right">
-                    <span onClick={() => window.location.replace('https://geniushubglobal.com/')} className="text-gray-500 cursor-pointer">geniushub.com</span>
+                    <span onClick={() => window.open('https://geniushubglobal.com/', '_blank')} className="text-gray-500 cursor-pointer">geniushubglobal.com</span>
                     </div>
                </div>
                <div className={styles.border__line}></div>
@@ -62,7 +62,7 @@ const Header = () => {
                     <Link to="/"><img src={Logotxt} alt="Logo2" /></Link>
                 </div>
                 <div className="right">
-                <span onClick={() => window.location.replace('https://geniushubglobal.com/')} className="text-gray-500 cursor-pointer">geniushub.com</span>
+                <span onClick={() => window.open('https://geniushubglobal.com/', '_blank')} className="text-gray-500 cursor-pointer">geniushubglobal.com</span>
                 </div>
            </div>
            <div className={styles.border__line}></div>
@@ -98,7 +98,7 @@ const Header = () => {
                         <Link to="/"><img src={Logotxt} alt="Logo2" /></Link>
                     </div>
                     <div className="right">
-                    <span onClick={() => window.location.replace('https://geniushubglobal.com/')} className="text-gray-500 cursor-pointer">geniushub.com</span>
+                    <span onClick={() => window.open('https://geniushubglobal.com/', '_blank')} className="text-gray-500 cursor-pointer">geniushubglobal.com</span>
                     </div>
                </div>
                <div className={styles.border__line}></div>
