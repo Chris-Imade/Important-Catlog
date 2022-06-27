@@ -30,7 +30,7 @@ export default function Home({ products }) {
       </div>
      </div>
       <div className={`flex flex-col md:flex-row flex-wrap justify-center items-center`}>
-        <div className={styles.underneath}>
+        <div className={"absolute z-[-100] lg:left-0 left-[-12rem]"}>
           <svg width="405" height="532" viewBox="0 0 405 532" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path fillRule="evenodd" clipRule="evenodd" d="M-103 439.209C-7.33914 439.209 70.2093 361.661 70.2093 266C70.2093 170.339 -7.33914 92.7907 -103 92.7907C-198.661 92.7907 -276.209 170.339 -276.209 266C-276.209 361.661 -198.661 439.209 -103 439.209ZM-103 532C43.9077 532 163 412.908 163 266C163 119.092 43.9077 0 -103 0C-249.908 0 -369 119.092 -369 266C-369 412.908 -249.908 532 -103 532Z" fill="#FB575C"/>
           <path fillRule="evenodd" clipRule="evenodd" d="M378 68.4815C385.998 68.4815 392.481 61.9979 392.481 54C392.481 46.0021 385.998 39.5185 378 39.5185C370.002 39.5185 363.519 46.0021 363.519 54C363.519 61.9979 370.002 68.4815 378 68.4815ZM378 77C390.703 77 401 66.7025 401 54C401 41.2975 390.703 31 378 31C365.297 31 355 41.2975 355 54C355 66.7025 365.297 77 378 77Z" fill="#A82682"/>
@@ -55,11 +55,11 @@ export default function Home({ products }) {
             </div>
             <p className='text-whit font-bold'>Genius Hub <span className='text-gray-900 font-light'>Catalog</span></p>
             <div className="middleMainLoe">
-              <p className={`${styles.mainTxt} font-extrabold`} >We  produce our product with <br />strong & long lasting facilities</p>
+              <p className={`${styles.mainTxt} lg:w-[28rem] font-extrabold`} >We  produce our product with <br />strong & long lasting facilities</p>
             </div>
             <p className='text-gray-400 mb-5 text-sm'>Don’t worry when you buy a product from our store, we provide a <br />legit fashion outfit, Bags & wigs for you. </p>
 
-            <div className={`${styles.bottomTxt} flex justify-between w-96`}>
+            <div className={`${styles.bottomTxt} flex justify-between lg:w-96`}>
               <div className={`${styles.bottomTxtLeft} flex-start ${styles.bottomCouter}`}>
                 <p className={`${styles.couter} font-extrabold text-4xl`}>2k+</p>
                 <span className='text-gray-400 text-xs'>Customers</span>

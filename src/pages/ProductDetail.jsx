@@ -38,8 +38,11 @@ const ProductDetail = () => {
 
     const { productId } = useParams();
     const { imageUrl } = productDetail;
+    const { discountPrice } = productDetail;
 
     // console.log(productId);
+
+    
     
     const fetchSingleProduct = async () => {
         try {
@@ -89,7 +92,7 @@ const ProductDetail = () => {
                </div>
                <div className={styles.border__line}></div>
                <div className="nav__bottom flex flex-col py-4 px-10 items-center justify-between md:flex-row md:justify-between">
-                    <ul className={`${styles.ul} mb-4 md:mb-0`}>
+                    <ul className={`${styles.ul} mb-4 md:mb-0 mr-6 lg:mr-0`}>
                         <li className={location.pathname === "/" ? styles.active : ""}><Link to="/" >Home</Link></li>
                         <li className={location.pathname === "/products" ? styles.active : ""}><Link to="/products" >Products</Link></li>
                         <li className={location.pathname === "/contact" ? styles.active : ""}><Link to="/contact" >Contact</Link></li>
@@ -121,10 +124,16 @@ const ProductDetail = () => {
         <div className={`${styles.productDetail} pt-40 md:pt-20 flex flex-col-reverse md:flex-row pb-20 items-center md:items-start`}>
          <div className={`${styles.productDetailLeft}`}>
             <div className='flex flex-col justify-between items-center md:items-start h-full'>
-                <h4 className="text-4xl md:text-7xl text-gray-900 font-bold mb-4">{productDetail.itemName} <span>&rarr;</span></h4>
-                <h6>{productDetail.itemDesc}</h6>
-                <p className="font-light text-2xl"><span className='text-gray-900 font-semibold mb-4'>Colour:</span> Multicolor</p>
-                <h3 className='text-2xl'>{"₦" + productDetail.itemPrice}</h3>
+                <h4 className="text-4xl md:text-4xl text-gray-900 font-bold mb-4">{productDetail.itemName} <span>&rarr;</span></h4>
+                <p className="font-light mb-4" style={{ lineHeight: "2rem" }}>{productDetail.itemDesc}</p>
+                <p className="font-light text-xl"><span className='text-gray-800 font-semibold mb-4'>Colour: </span>{"Multicolor"}</p>
+                <div className="flex justify-between">
+                    <h3 className='font-semibold text-green-500 mr-4'><span className="text-gray-800 font-semibold">Price: </span> <span>{"₦" + (discountPrice ? discountPrice : productDetail.itemPrice)}</span></h3>
+                    {discountPrice && (
+                        <h3 className='font-semibold text-green-500'><span className="text-gray-800 font-semibold">Original Price: </span> <span  className='line-through'>{"₦" + productDetail.originalPrice}</span></h3>
+                    )}
+                </div>
+                
                 <button onClick={() => addToCart(productDetail.id)} className='border-gray-600 border-2 rounded-md py-2 mt-10 px-10' type='button'>Add to cart <ShoppingBasketIcon /></button>
             </div>
           </div>
@@ -160,9 +169,9 @@ const ProductDetail = () => {
             <h4 className='text-3xl text-gray-900 font-semibold text-center mb-20 lg:self-start'>You may also like</h4>
             {products ? (
                 <div className={`${styles.relatedPosts} ml-40 md:ml-0 mb-20 flex flex-wrap lg:flex-nowrap flex-col md:flex-row`}>
-                    <div className={`${styles.itemsCard} m-3`}>
+                    <div className={`${styles.itemsCard} m-3 flex flex-col justify-between items-center`}>
                         <Link to={`/product-details/${products[1].id}`}>
-                        <div className={`${styles.imageTop}`}>
+                        <div className={`${styles.imageTop} flex justify-center items-between`}>
                             <img className={styles.productImg} src={products[1].imageUrl[0]} alt="Item" width={221} height={326} />
                         </div>
                         </Link>
@@ -174,7 +183,7 @@ const ProductDetail = () => {
                             <div className={`${styles.addToCart} flex justify-between items-center`}>
                                 <button onClick={() => {
                                     addToCart(products[0].id);
-                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6">
+                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6 mr-2 w-[145px]">
                                     Add to cart
                                     <ShoppingBasketIcon className="ml-2 text-white" />
                                 </button>
@@ -187,9 +196,9 @@ const ProductDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.itemsCard} m-3`}>
+                    <div className={`${styles.itemsCard} m-3 flex flex-col justify-between items-center`}>
                         <Link to={`/product-details/${products[2].id}`}>
-                        <div className={`${styles.imageTop}`}>
+                        <div className={`${styles.imageTop} flex justify-center items-between`}>
                             <img className={styles.productImg} src={products[2].imageUrl[0]} alt="Item" width={221} height={326} />
                         </div>
                         </Link>
@@ -201,7 +210,7 @@ const ProductDetail = () => {
                             <div className={`${styles.addToCart} flex justify-between items-center`}>
                                 <button onClick={() => {
                                     addToCart(products[2].id);
-                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6">
+                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6 mr-2 w-[145px]">
                                     Add to cart
                                     <ShoppingBasketIcon className="ml-2 text-white" />
                                 </button>
@@ -214,9 +223,9 @@ const ProductDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.itemsCard} m-3`}>
+                    <div className={`${styles.itemsCard} m-3 flex flex-col justify-between items-center`}>
                         <Link to={`/product-details/${products[3].id}`}>
-                        <div className={`${styles.imageTop}`}>
+                        <div className={`${styles.imageTop} flex justify-center items-between`}>
                             <img className={styles.productImg} src={products[3].imageUrl[0]} alt="Item" width={221} height={326} />
                         </div>
                         </Link>
@@ -228,7 +237,7 @@ const ProductDetail = () => {
                             <div className={`${styles.addToCart} flex justify-between items-center`}>
                                 <button onClick={() => {
                                     addToCart(products[3].id);
-                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6">
+                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6 mr-2 w-[145px]">
                                     Add to cart
                                     <ShoppingBasketIcon className="ml-2 text-white" />
                                 </button>
@@ -241,9 +250,9 @@ const ProductDetail = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`${styles.itemsCard} m-3`}>
+                    <div className={`${styles.itemsCard} m-3 flex flex-col justify-between items-center`}>
                         <Link to={`/product-details/${products[0].id}`}>
-                        <div className={`${styles.imageTop}`}>
+                        <div className={`${styles.imageTop} flex justify-center items-between`}>
                             <img className={styles.productImg} src={products[0].imageUrl[0]} alt="Item" width={221} height={326} />
                         </div>
                         </Link>
@@ -255,7 +264,7 @@ const ProductDetail = () => {
                             <div className={`${styles.addToCart} flex justify-between items-center`}>
                                 <button onClick={() => {
                                     addToCart(products[0].id);
-                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6">
+                                }} className="mt-4 py-2 px-4 bg-gray-800 flex justify-center items-center text-white rounded-md mb-6 mr-2 w-[145px]">
                                     Add to cart
                                     <ShoppingBasketIcon className="ml-2 text-white" />
                                 </button>

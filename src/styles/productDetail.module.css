@@ -4,9 +4,6 @@
 .productDetailRight {
     flex: 0.5
 }
-.itemsCard {
-    max-width: fit-content;
-}
 .detailImg {
     width: 15rem;
     border-radius: 9px;
@@ -67,8 +64,11 @@
 }
 .itemsCard {
     max-width: fit-content;
-    border-radius: 9px;
-    border: 2px solid orchid;
+    width: 221px;
+     /* width: 256px; */
+     border-radius: 9px;
+     border: 2px solid orchid;
+     height:  462px;
 }
 .productImg {
     border-radius: 9px;

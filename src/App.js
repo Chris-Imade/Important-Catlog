@@ -72,7 +72,8 @@ function App() {
 
     // BEM
     <div className="app">
-      <Router>
+      {window.navigator.onLine ? (
+        <Router>
             <Header />
             <Switch>
               <Route exact path="/">
@@ -101,8 +102,18 @@ function App() {
                 <Contact />
               </Route>
             </Switch>
-          </ Router>
-    </div>
+        </ Router>
+
+      ) : (
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh" }}>
+          <div className="flex justify-center items-center flex-col">
+            <img src="" alt="Offline Gif" />
+            <h4 className="font-semibold" style={{ fontSize: "30px"}}>Your Internet is offline.</h4>
+            <span className="text-blue-500 text-center" onClick={() => window.location.reload()}>Retry?</span>
+          </div>
+        </div>
+      )}
+      </div>
   );
 }
 

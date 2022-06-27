@@ -2,11 +2,6 @@
     background-color: #DD3A3F;
     border-radius: 8px;
 }
-.underneath {
-    position: absolute;
-    z-index: -100;
-    left: 0;
-}
 .img {
     width: fit-content;
     border-radius: 14px;
@@ -17,7 +12,6 @@
     margin: 20px;
 }
 .mainTxt {
-    width: 28rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
     font-size: 1.952rem;

@@ -43,8 +43,8 @@ export const Footer = () => {
           <div>
             <h2 className='mb-3 font-semibold text-xl text-white'>Social Links</h2>
             <ol className="flex">
-              <li className='flex mr-4 justify-center items-center rounded-full border-[1px] border-white w-9 h-9'><img src={Facebook} alt="Facebook" className='text-white w-5' /></li>
-              <li className='flex mr-4 justify-center items-center rounded-full border-[1px] border-white w-9 h-9'><img src={Instagram} alt="Intagram" className='text-white w-5' /></li>
+              <li onClick={() =>  window.open("https://www.facebook.com/geniushubglobal/", "_blank")} className='flex mr-4 justify-center items-center rounded-full border-[1px] border-white w-9 h-9'><img src={Facebook} alt="Facebook" className='text-white w-5' /></li>
+              <li onClick={() =>  window.open("https://www.instagram.com/geniushubglobal/", "_blank")} className='flex mr-4 justify-center items-center rounded-full border-[1px] border-white w-9 h-9'><img src={Instagram} alt="Intagram" className='text-white w-5' /></li>
               <li className='flex mr-4 justify-center items-center rounded-full border-[1px] border-white w-9 h-9'><img src={Youtube} alt="Youtube" className='text-white w-5' /></li>
             </ol>
           </div>
