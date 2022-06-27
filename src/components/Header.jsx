@@ -30,7 +30,7 @@ const Header = () => {
                     </div>
                </div>
                <div className={styles.border__line}></div>
-               <div className="nav__bottom flex flex-col py-4 px-10 items-center justify-between md:flex-row md:justify-between">
+               <div className="nav__bottom flex flex-col py-4 lg:px-10 items-center justify-between md:flex-row md:justify-between">
                     <ul className={`${styles.ul} mb-4 md:mb-0`}>
                         <li className={location.pathname === "/" ? styles.active : ""}><Link to="/" >Home</Link></li>
                         <li className={location.pathname === "/products" ? styles.active : ""}><Link to="/products" >Products</Link></li>
@@ -66,7 +66,7 @@ const Header = () => {
                 </div>
            </div>
            <div className={styles.border__line}></div>
-           <div className="nav__bottom flex py-4 flex-col px-10 items-center justify-between md:flex-row md:justify-between">
+           <div className="nav__bottom flex py-4 flex-col lg:px-10 items-center justify-between md:flex-row md:justify-between">
                 <ul className={`${styles.ul} mb-4 md:mb-0`}>
                     <li className={location.pathname === "/" ? styles.active : ""}><Link to="/" >Home</Link></li>
                     <li className={location.pathname === "/products" ? styles.active : ""}><Link to="/products" >Products</Link></li>
@@ -102,7 +102,7 @@ const Header = () => {
                     </div>
                </div>
                <div className={styles.border__line}></div>
-               <div style={{ marginTop: 5, marginBottom: 5 }} className="nav__bottom flex flex-col px-10 items-center justify-between md:flex-row md:justify-between">
+               <div style={{ marginTop: 5, marginBottom: 5 }} className="nav__bottom flex flex-col lg:px-10 items-center justify-between md:flex-row md:justify-between">
                     <ul className={`${styles.ul} mb-4 md:mb-0`}>
                         <li className={location.pathname === "/" ? styles.active : ""}><Link to="/" >Home</Link></li>
                         <li className={location.pathname === "/products" ? styles.active : ""}><Link to="/products" >Products</Link></li>

@@ -49,7 +49,7 @@ export const Footer = () => {
             </ol>
           </div>
         </div>
-        <div className="text-white mb-8">&copy; Copyright 2022, Genius Hub Global Initiative. All rights reserved</div>
+        <div className="text-white mb-8 mx-4">&copy; Copyright 2022, Genius Hub Global Initiative. All rights reserved</div>
     </div>
   )
 };

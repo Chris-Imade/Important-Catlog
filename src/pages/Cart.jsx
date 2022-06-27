@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/cart.module.css';
 import { Header, CartItem, Footer } from '../components/index';
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
  import { store } from "../Redux/store";
 import { allActions } from '../Redux/ActionCreators/action';
 import { bindActionCreators } from "redux";
@@ -53,7 +53,7 @@ const Cart = ({ onUpdateCartQty, onRemoveFromCart }) => {
         <div className="mt-56">
             <Header />
            <div className={`${styles.cartContainer} mx-40`}>
-            <h3 className={`${styles.cartTitle}`}>{`Cart[${cart === undefined ? "No" : amount } item(s)]`}</h3>
+            <h3 className={`lg:text-[3rem] lg:font-[600] w-[7rem] lg:w-[23rem] text-center ml-[-2rem] lg:ml-0`}>{`Cart[${cart === undefined ? "No" : amount } item(s)]`}</h3>
              <>
              { !cart.line_items ? (
                 <div className='flex flex-col justify-start items-center mt-6 text-4xl'>
@@ -98,11 +98,11 @@ const Cart = ({ onUpdateCartQty, onRemoveFromCart }) => {
                   <p>Delivery fee not included</p>
                 </div>
                 <div className='flex flex-col justify-center items-center mt-20'>
-                  <div>
-                    <Link to="/products"><button type='button' className='lg:mr-4 text-gray-900 font-semibold shadow-xl py-4 px-6 rounded-md'>Continue Shopping</button></Link>
-                    <Link to="/checkout"><button type='button' style={{ backgroundColor: "#52BA00"}} className='lg:ml-4 text-white font-semibold shadow-xl py-4 px-6 rounded-md'>Proceed to check out</button></Link>
+                  <div className='flex'>
+                    <Link to="/products"><button type='button' className='mx-3 lg:mx-0 lg:mr-4 text-gray-900 font-semibold shadow-xl py-2 lg:py-4 px-4 lg:px-6 rounded-md'>Continue Shopping</button></Link>
+                    <Link to="/checkout"><button type='button' style={{ backgroundColor: "#52BA00"}} className='mx-3 lg:mx-0 lg:ml-4 text-white font-semibold shadow-xl py-2 lg:py-4 px-4 lg:px-6 rounded-md'>Proceed to check out</button></Link>
                   </div>
-                  <button onClick={() => clearLocalStoarage()} type="button" className='bg-orange-600 py-4 shadow-xl font-semibold rounded-md text-white mt-6 w-full'>Clear All</button>
+                  <button onClick={() => clearLocalStoarage()} type="button" className='bg-orange-600 py-4 shadow-xl font-semibold rounded-md text-white mt-6 w-[90%] lg:w-[100%]'>Clear All</button>
                 </div>
               </div>
             </div>
