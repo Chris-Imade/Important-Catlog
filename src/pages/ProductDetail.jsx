@@ -165,7 +165,7 @@ const ProductDetail = () => {
             </div>
             )}
      </div>
-        <div className={`${styles.productDetailSlide} flex flex-col margin-auto justify-center items-center`}>
+        <div className={`lg:w-[79%] flex flex-col margin-auto justify-center items-center`}>
             <h4 className='text-3xl text-gray-900 font-semibold text-center mb-20 lg:self-start'>You may also like</h4>
             {products ? (
                 <div className={`${styles.relatedPosts} ml-40 md:ml-0 mb-20 flex flex-wrap lg:flex-nowrap flex-col md:flex-row`}>

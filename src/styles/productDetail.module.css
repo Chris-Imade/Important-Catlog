@@ -102,10 +102,6 @@
     max-width: 1040px;
     width: 100%;
 }
-.productDetailSlide {
-    width: 79%;
-}
-
 /* Everything Modal */
 .modalOverlay {
     position: fixed;
