@@ -98,13 +98,13 @@ const Products = () => {
     return (
         <>
             { location.pathname === "/products" ? (
-                <div className={`${styles.products__container} ${styles.extraMargin} mx-10 pb-6 px-10 mb-20`}>
+                <div className={`${styles.products__container} mt-28 lg:mt-[15rem] mx-4 sm:mx-10 pb-6 px-4 sm:px-10 mb-20`}>
                     <div className="py-8">
                         <p className={`font-extrabold text-2xl`}>Product Highlight</p>
                     </div>
-                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-start bg-white py-4 pl-4 mt-4 mb-4`}>
+                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-center items-center sm:justify-start bg-white py-4 pl-4 mb-8`}>
                         <div className={`${styles.all}`}>
-                            <div  className={`font-bold flex justify-center items-center`}>
+                            <div  className={`font-light sm:font-bold flex justify-center items-center`}>
                                 Category:
                                 <div className={`py-4 px-4`}>
                                         <select onChange={(e) => setOption({ select: e.target.value })}>
@@ -118,7 +118,7 @@ const Products = () => {
                         </div>
                         <div className={`${styles.filterDropdown}`}>
                             <div className={`${styles.all}`}>
-                                <div  className={`font-bold flex justify-center items-center`}>
+                                <div  className={`font-light sm:font-bold flex justify-center items-center`}>
                                     Sort by:
                                     <div className={`py-4 px-4`}>
                                             <select onChange={(e) => setOptionSelect({ selectSort: e.target.value })}>
@@ -136,13 +136,13 @@ const Products = () => {
                 </div>
                 </div>
             ) : (
-                <div className={`${styles.products__container} mx-10 pb-6 px-10 mb-20`}>
+                <div className={`${styles.products__container}  mx-4 sm:mx-10 pb-6 px-4 sm:px-10 mb-20`}>
                     <div className="py-8">
                         <p className={`font-extrabold text-2xl`}>Product Highlight</p>
                     </div>
-                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-start bg-white py-4 pl-4 mt-4 mb-4`}>
+                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-start bg-white py-4 pl-4 mb-8`}>
                         <div className={`${styles.all}`}>
-                            <div  className={`font-bold flex justify-center items-center`}>
+                            <div  className={`font-light sm:font-bold flex justify-center items-center`}>
                                 Category:
                                 <div className={`py-4 px-4`}>
                                         <select onChange={(e) => setOption({ select: e.target.value })}>
