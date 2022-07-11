@@ -180,10 +180,10 @@ const setLabel = (payloadData) => {
         })
     }
 }
-const setInternetError = (payloadData) => {
+const setNewUser = (payloadData) => {
     return (dispatch) => {
         dispatch({
-            type: "SET_NETWORK_ERROR",
+            type: "SET_NEW_USER",
             payload: payloadData
         })
     }
@@ -201,5 +201,5 @@ export const allActions = {
     setCheckoutDetails,
     setProductDetail,
     setLabel,
-    setInternetError
+    setNewUser
 }

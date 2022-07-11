@@ -72,7 +72,7 @@ function App() {
 
     // BEM
     <div className="app">
-      {window.navigator.onLine ? (
+      {/* {window.navigator.onLine ? ( */}
         <Router>
             <Header />
             <Switch>
@@ -104,7 +104,7 @@ function App() {
             </Switch>
         </ Router>
 
-      ) : (
+      {/* ) : (
         <div style={{ display: "flex", justifyContent: "center", alignItems: "center", width: "100vw", height: "100vh" }}>
           <div className="flex justify-center items-center flex-col">
             <img src="" alt="Offline Gif" />
@@ -112,7 +112,7 @@ function App() {
             <span className="text-blue-500 text-center" onClick={() => window.location.reload()}>Retry?</span>
           </div>
         </div>
-      )}
+      )} */}
       </div>
   );
 }

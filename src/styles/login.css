@@ -94,11 +94,6 @@ label {
     margin-top: -2rem;
     color: #8B8B8B;
 }
-.curly__image {
-    position: absolute;
-    margin-top: 30px;
-    object-fit: contain;
-}
 
 /* .login__right > img {
     width: auto;

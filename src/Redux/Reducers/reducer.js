@@ -12,7 +12,8 @@ let INITIAL_STATE = {
   checkoutDetails: {},
   productDetail: {},
   labels: [],
-  internetError: false
+  internetError: false,
+  user: {}
 }
 
 if (localStorage.getItem("cart")) {
@@ -133,10 +134,10 @@ const catlogState = (state = INITIAL_STATE, action) => {
         labels: action.payload
       }
     }
-    case "SET_NETWORK_ERROR": {
+    case "SET_NEW_USER": {
       return {
         ...state,
-        internetError: action.payload
+        user: action.payload
       }
     }
     default:

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Curly from '../public/Group 23.png'
 import BlurBg from '../public/blurBg.png'
 import Google from '../public/google-logo.png'
@@ -7,7 +7,11 @@ import styles from '../styles/login.module.css'
 import '../styles/login.css'
 
 
-const login = () => {
+const Login = () => {
+
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <div className="login bg-slate-800">
             <div className="login__left">
@@ -20,11 +24,11 @@ const login = () => {
                 <form className='border-0'>
                     <div className="email mb-4">
                         <label htmlFor="email">Email</label>
-                        <input id='email' type="email" placeholder='example@domain.com' name='email' />
+                        <input onChange={(e) => setEmail(e.target.value)} id='email' type="email" placeholder='example@domain.com' name='email' />
                     </div>
                     <div className="password mb-4">
                         <label htmlFor="password">Password</label>
-                        <input id='password' type="password" placeholder='' name='password' />
+                        <input onChange={(e) => setPassword(e.target.value)} id='password' type="password" placeholder='' name='password' />
                     </div> 
                     <div className="radio flex justify-between">
                         <div className="left">
@@ -47,4 +51,4 @@ const login = () => {
         </div>
     )
 };
-export default login;
+export default Login;
