@@ -5,12 +5,39 @@ import Google from '../public/google-logo.png'
 import { Link } from 'react-router-dom';
 import styles from '../styles/login.module.css'
 import '../styles/login.css'
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useDispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { allActions } from '../Redux/ActionCreators/action';
 
 
 const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const dispatch = useDispatch();
+    const { setNewUser } = bindActionCreators(allActions, dispatch);
+
+    const handleLogin = (e) => {
+        e.preventDefault();
+
+        const auth = getAuth();
+        signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Signed in 
+            const user = userCredential.user;
+            console.log(user)
+            setNewUser(user);
+            window.history.back();
+            // ...
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(errorMessage);
+        });
+
+    }
 
     return (
         <div className="login bg-slate-800">
@@ -21,7 +48,7 @@ const Login = () => {
                 <div className={`${styles.hr} my-4`}>
                     <hr className={styles.hr__main} />
                 </div>
-                <form className='border-0'>
+                <form className='border-0' onSubmit={(e) => handleLogin(e)}>
                     <div className="email mb-4">
                         <label htmlFor="email">Email</label>
                         <input onChange={(e) => setEmail(e.target.value)} id='email' type="email" placeholder='example@domain.com' name='email' />

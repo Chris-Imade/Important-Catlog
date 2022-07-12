@@ -36,7 +36,6 @@ export const Signup = () => {
     const googleSignUp = async() => {
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
-
         signInWithPopup(auth, provider)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
@@ -44,7 +43,9 @@ export const Signup = () => {
           const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
-          console.log("USER: " + user);
+          console.log("USER: " + JSON.stringify(user));
+          setNewUser(user);
+          window.history.back();
           // ...
         }).catch((error) => {
           // Handle Errors here.
@@ -120,6 +121,7 @@ export const Signup = () => {
             const user = userCredential.user;
             console.log(user);
             setNewUser(user);
+            window.history.back();
             // setSignUpComplete(true);
         })
         .catch((error) => {

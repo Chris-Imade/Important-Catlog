@@ -16,6 +16,7 @@ const Header = () => {
     const cart = useSelector(state => state.reducer.cart);
     const [menuActive, setMenuActive] = useState(false);
 
+    const user = useSelector(state => state.reducer.user);
     let totalItems = cart.line_items.length;
     const location = useLocation();
 
@@ -52,6 +53,30 @@ const Header = () => {
                                     <p>{totalItems ? totalItems : 0}</p>
                                 </div>
                             </a>
+                            {user ? (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <span className="rounded-full border-gray-600 border-2">
+                                        <img src={user.photoUrl} alt={user.displayName} />
+                                    </span>
+                                </div>
+                            ) : (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <Link to={"/signin"}>
+                                        <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                    </Link>
+                                </div>
+                            )}
+                            
+                            <div className='absolute'>
+                                {/* Profile dropdown */}
+                                <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                <ul>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                </ul>
+                            </div>
                     </div>
                     <div className={styles.border__line}></div>
                     </nav>
@@ -92,6 +117,30 @@ const Header = () => {
                                             <p>{totalItems ? totalItems : 0}</p>
                                         </div>
                                     </a>
+                                    {user ? (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <span className="rounded-full border-gray-600 border-2">
+                                        <img src={user.photoUrl} alt={user.displayName} />
+                                    </span>
+                                    </div>
+                                ) : (
+                                    <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                        <Link to={"/signin"}>
+                                            <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                        </Link>
+                                    </div>
+                                )}
+                                
+                                <div className='absolute'>
+                                    {/* Profile dropdown */}
+                                    <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                    <ul>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                    </ul>
+                                </div>
                                 </div>
                             </div>
                         )}
@@ -133,6 +182,30 @@ const Header = () => {
                                     <p>{totalItems ? totalItems : 0}</p>
                                 </div>
                             </a>
+                            {user ? (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <span className="rounded-full border-gray-600 border-2">
+                                        <img src={user.photoUrl} alt={user.displayName} />
+                                    </span>
+                                </div>
+                            ) : (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <Link to={"/signin"}>
+                                        <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                    </Link>
+                                </div>
+                            )}
+                            
+                            <div className='absolute'>
+                                {/* Profile dropdown */}
+                                <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                <ul>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                    <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                </ul>
+                            </div>
                     </div>
                     <div className={styles.border__line}></div>
                 </nav>
@@ -174,6 +247,30 @@ const Header = () => {
                                             <p>{totalItems ? totalItems : 0}</p>
                                         </div>
                                     </a>
+                                    {user ? (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <span className="rounded-full border-gray-600 border-2">
+                                        <img src={user.photoUrl} alt={user.displayName} />
+                                    </span>
+                                    </div>
+                                ) : (
+                                    <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                        <Link to={"/signin"}>
+                                            <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                        </Link>
+                                    </div>
+                                )}
+                                
+                                <div className='absolute'>
+                                    {/* Profile dropdown */}
+                                    <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                    <ul>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                    </ul>
+                                </div>
                                 </div>
                             </div>
                         )}
@@ -208,16 +305,67 @@ const Header = () => {
                                 </div>
                 
                             {location.pathname === "/cart" ? (
-                                <div className='w-40'></div>
-                            ) : (
-                                <a href="/cart">
-                                    <div className={`${styles.cart} mr-24 md:mr-0 cursor-pointer flex items-center justify-center`}>
-                                        <div className={styles.cart__basket}>
-                                        <ShoppingBasketIcon className="hover:text-pink-800 text-gray-700" />
+                                <React.Fragment>
+                                    {user ? (
+                                        <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                            <span className="rounded-full border-gray-600 border-2">
+                                                <img src={user.photoUrl} alt={user.displayName} />
+                                            </span>
                                         </div>
-                                        <p>{totalItems ? totalItems : 0}</p>
+                                    ) : (
+                                        <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                            <Link to={"/signin"}>
+                                                <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                            </Link>
+                                        </div>
+                                    )}
+                                    
+                                    <div className='absolute'>
+                                        {/* Profile dropdown */}
+                                        <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                        <ul>
+                                            <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                            <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                            <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                            <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                        </ul>
                                     </div>
-                                </a>
+                                </React.Fragment>
+                            ) : (
+                                <React.Fragment>
+                                    <a href="/cart">
+                                        <div className={`${styles.cart} mr-24 md:mr-0 cursor-pointer flex items-center justify-center`}>
+                                            <div className={styles.cart__basket}>
+                                            <ShoppingBasketIcon className="hover:text-pink-800 text-gray-700" />
+                                            </div>
+                                            <p>{totalItems ? totalItems : 0}</p>
+                                        </div>
+                                    </a>
+                                    {user ? (
+                                <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                    <span className="rounded-full border-gray-600 border-2">
+                                        <img src={user.photoUrl} alt={user.displayName} />
+                                    </span>
+                                </div>
+                                ) : (
+                                    <div className="mr-24 md:mr-0 cursor-pointer flex items-center justify-center">
+                                        <Link to={"/signin"}>
+                                            <button className='border-[1px] border-gray-600 rounded-lg px-4 py-2 font-semibold'>Sign In</button>
+                                        </Link>
+                                    </div>
+                                )}
+                                
+                                <div className='absolute'>
+                                    {/* Profile dropdown */}
+                                    <div className={`${styles.triangle} absolute top-0 right-4`}></div>
+                                    <ul>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Profile</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Dashboard</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Settings</li>
+                                        <li className='px-4 py-1 hover:border-l-2 border-orange-600'>Logout</li>
+                                    </ul>
+                                </div>
+                                </React.Fragment>
                             )}
                         </div>
                         <div className={styles.border__line}></div>
