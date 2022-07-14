@@ -9,7 +9,8 @@ import {
   Login,
   Signup,
   ProductDetail,
-  Contact
+  Contact,
+  Dashboard
 } from './pages/index';
 import Checkout from './pages/CheckoutForm/Checkout/Checkout';
 
@@ -68,6 +69,8 @@ function App() {
   }, []);
 
 
+// Add user to local storage
+
   return (
 
     // BEM
@@ -100,6 +103,9 @@ function App() {
               </Route>
               <Route exact path="/contact">
                 <Contact />
+              </Route>
+              <Route exact path="/dashboard/:userId">
+                <Dashboard />
               </Route>
             </Switch>
         </ Router>

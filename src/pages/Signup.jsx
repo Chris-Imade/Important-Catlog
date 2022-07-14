@@ -7,7 +7,6 @@ import {
     getAuth, 
     createUserWithEmailAndPassword, 
     signInWithRedirect, 
-    signInWithPopup, 
     getRedirectResult 
 } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
@@ -25,92 +24,80 @@ export const Signup = () => {
     const [password, setPassword] = useState("");
     const [showPass, setShowPass] = useState(false);
     const [radio, setRadio] = useState("");
-    const [resultMessage, setResultMessage] = useState("");
+
     
+
     const dispatch = useDispatch();
 
-    const { setNewUser } = bindActionCreators(allActions, dispatch);
+    const { setNewUser, setTrigger, setSharp } = bindActionCreators(allActions, dispatch);
     const user = useSelector(state => state.reducer.user);
+    const trigger = useSelector(state => state.reducer.trigger);
+    const sharp = useSelector(state => state.reducer.sharp);
     console.log("user from redux: " + JSON.stringify(user));
+    
+    if(trigger) {
+        setTimeout(() => {
+            setTrigger(false);
+        }, 4000)
+    }
+
+
+        const checkStatus = (action) => {
+            switch (action.type) {
+                case "SUCCESSFUL_LOGIN": {
+                    return setSharp({ message: `action.payload`, color: "text-green-500" })
+                }
+                case "UNSUCCESSFUL_LOGIN": {
+                    return setSharp({ message: action.payload, color: "text-red-500"})
+                }
+                default:
+                    return;
+            }
+        }
 
     const googleSignUp = async() => {
         const provider = new GoogleAuthProvider();
         const auth = getAuth();
-        signInWithPopup(auth, provider)
+        signInWithRedirect(auth, provider);
+        getRedirectResult(auth)
         .then((result) => {
           // This gives you a Google Access Token. You can use it to access the Google API.
           const credential = GoogleAuthProvider.credentialFromResult(result);
           const token = credential.accessToken;
           // The signed-in user info.
           const user = result.user;
-          console.log("USER: " + JSON.stringify(user));
+          setTimeout(() => {
+            window.location.push("/");
+          }, 4000)
           setNewUser(user);
-          window.history.back();
+          window.localStorage.setItem("user", user);
+          setUsername("");
+          setPassword("");
+          setEmail("");
+          setTrigger(true);
+          checkStatus({
+            type: "SUCCESSFUL_LOGIN",
+            payload: "Signed In successfully"
+          })
           // ...
         }).catch((error) => {
           // Handle Errors here.
-          const errorCode = error.code;
+        //   const errorCode = error.code;
           const errorMessage = error.message;
           console.log(errorMessage);
           // The email of the user's account used.
           const email = error.customData.email;
           // The AuthCredential type that was used.
           const credential = GoogleAuthProvider.credentialFromError(error);
+          setTrigger(true);
+          checkStatus({
+            type: "UNSUCCESSFUL_LOGIN",
+            payload: `${errorMessage}` 
+          })
           // ...
         });
-        
-        // auth.useDeviceLanguage();
-        
-        // signInWithRedirect(auth, provider);
-
-
-        // getRedirectResult(auth)
-        // .then((result) => {
-        //   // This gives you a Google Access Token. You can use it to access Google APIs.
-        //   const credential = GoogleAuthProvider.credentialFromResult(result);
-        //   const token = credential.accessToken;
-      
-        //   // The signed-in user info.
-        //   const user = result.user;
-        //   console.log("User" + JSON.stringify(user));
-        //   console.log("Result" + JSON.stringify(result));
-        //   setNewUser(user);
-        // //   setSignUpComplete(true);
-        //   setResultMessage(`Successfully created ${username}'s account`);
-        // }).catch((error) => {
-        //   // Handle Errors here.
-        //   const errorCode = error.code;
-        //   const errorMessage = error.message;
-        //   // The email of the user's account used.
-        //   const email = error.customData.email;
-        //   // The AuthCredential type that was used.
-        //   const credential = GoogleAuthProvider.credentialFromError(error);
-        //   // ...
-        //   setResultMessage(errorMessage);
-        //   console.log(errorMessage);
-        // });
-
     }
 
-
-
-    // if(user) {
-    //     if(radio) {
-    //         let details = {
-    //             name: username,
-    //             password: password,
-    //             email: email
-    //         }
-
-    //         window.localStorage.setItem("userDetails", details);
-    //     }
-        
-    //     window.localStorage.setItem("username", username);
-        
-    //     setUsername("");
-    //     setPassword("");
-    //     setEmail("");
-    // }
 
     const createUserAccount = (e) => {
         e.preventDefault();
@@ -119,16 +106,27 @@ export const Signup = () => {
         .then((userCredential) => {
             // Signed in 
             const user = userCredential.user;
-            console.log(user);
+            window.localStorage.setItem("user", user);
             setNewUser(user);
-            window.history.back();
-            // setSignUpComplete(true);
+            setTimeout(() => {
+                window.location.push("/login");
+            }, 4000)
+            setTrigger(true);
+            checkStatus({
+                type: "SUCCESSFUL_LOGIN",
+                payload: "Signed In successfully"
+            })
         })
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
             console.log()
             console.log(error, `errorCode: ${errorCode}, errorMessage: ${errorMessage}`);
+            setTrigger(true);
+            checkStatus({
+                type: "UNSUCCESSFUL_LOGIN",
+                payload: `${errorMessage}`
+            })
         });
         
     }
@@ -182,13 +180,11 @@ export const Signup = () => {
             <div className="login__right relative mb-[-20px]">
                 <img className="hidden" placeholder="blur" width={395.07} height={420.04} src={BlurBg} alt="blur" />
             </div>
-            {/* {user && setTimeout(() => {
-                return (
-                    <div className={`${styles.signupSuccess} absolute right-4 rounded-lg shadow-md bg-white p-9 top-2`}>
-                        <p className='text-green-500 font-semibold text-2xl'>{resultMessage}</p>
-                    </div>
-                )
-            }, 4000)} */}
+            {trigger && (
+                <div className={`${styles.signupSuccess} absolute right-4 rounded-lg shadow-md bg-white p-9 top-2`}>
+                    <p className={`${sharp.color} font-semibold text-2xl`}>{sharp.message}</p>
+                </div>
+            )}
         </div>
     )
 };

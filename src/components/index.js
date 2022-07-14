@@ -6,3 +6,4 @@ export { default as CartItem } from './CartItem';
 export { default as Footer } from './Footer';
 export { default as SkeletonLoader } from './SkeletonLoader';
 export { default as SearchBarManipulator } from './SearchBarManipulator';
+export { default as DashboardAside } from './DashboardAside';

@@ -98,11 +98,8 @@ const Products = () => {
     return (
         <>
             { location.pathname === "/products" ? (
-                <div className={`${styles.products__container} mt-28 lg:mt-[15rem] mx-4 sm:mx-10 pb-6 px-4 sm:px-10 mb-20`}>
-                    <div className="py-8">
-                        <p className={`font-extrabold text-2xl`}>Product Highlight</p>
-                    </div>
-                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-center items-center sm:justify-start bg-white py-4 pl-4 mb-8`}>
+                <div className={`mt-28 lg:mt-[15rem] mx-4 sm:mx-10 pb-6 px-4 sm:px-10 mb-20`}>
+                    <div className={`${styles.filter} flex flex-col sm:flex-row justify-center items-center sm:justify-start bg-white py-4 pl-4 mb-8 shadow-lg border-[0.5px] border-gray-300`}>
                         <div className={`${styles.all}`}>
                             <div  className={`font-light sm:font-bold flex justify-center items-center`}>
                                 Category:

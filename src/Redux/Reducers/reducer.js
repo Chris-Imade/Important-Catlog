@@ -13,7 +13,12 @@ let INITIAL_STATE = {
   productDetail: {},
   labels: [],
   internetError: false,
-  user: {}
+  user: null,
+  trigger: false,
+  sharp: {
+    message: "",
+    color: ""
+}
 }
 
 if (localStorage.getItem("cart")) {
@@ -138,6 +143,18 @@ const catlogState = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         user: action.payload
+      }
+    }
+    case "SET_TRIGGER": {
+      return {
+        ...state,
+        trigger: action.payload
+      }
+    }
+    case "SET_SHARP": {
+      return {
+        ...state,
+        sharp: action.payload
       }
     }
     default:

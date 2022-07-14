@@ -36,7 +36,9 @@ const SearchBarManipulator = () => {
 
     return (
         <>
-            {(() => {if(location.pathname === "/" || location.pathname === "/products") {
+            {(() => {if(location.pathname === "/signup" || location.pathname === "/login" || location.pathname === "/cart") {
+                    return (<div></div>);
+                } else {
                     return (
                         <form onSubmit={(e) => handleSubmit(e)} className='flex items-center relative w-[15rem] md:w-full'>
                             <span className="absolute left-[-2rem] top-6">
@@ -64,9 +66,7 @@ const SearchBarManipulator = () => {
                             </Stack>
                             
                         </form>
-                    )
-                } else {
-                    return (<div></div>);
+                    );
                 }})()}
         </>
     )

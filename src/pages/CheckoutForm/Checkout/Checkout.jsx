@@ -6,6 +6,8 @@ import { bindActionCreators } from "redux";
 import { allActions } from '../../../Redux/ActionCreators/action';
 import DoneIcon from '@material-ui/icons/Done';
 import CancelIcon from '@material-ui/icons/Cancel';
+import { collection, doc, setDoc } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const Checkout = () => {
     const [checkoutDetailsState, setCheckoutDetailsState] = useState({
@@ -22,6 +24,7 @@ const Checkout = () => {
   const [content, setContent] = useState();
   const [displayModal, setDisplayModal] = useState(false);
   const [proceed, setProceed] = useState(false);
+  const [orderSuccess, setOrderSuccess] = useState(false);
   const cart = useSelector((state) => state.reducer.cart);
   const overallPrice = useSelector((state) => state.reducer.overallPrice);
   const overallCount = useSelector((state) => state.reducer.overallCount);
@@ -81,6 +84,24 @@ const Checkout = () => {
       setDisplayModal(true);
     }
    
+  }
+
+  const handleSubmitOrder = async() => {
+    const ordersRef = collection(db, 'orders');
+    try {
+        await setDoc(doc(ordersRef, checkoutDetailsRedux.customerFirstname), checkoutDetailsRedux);
+        console.log("Product successfully addded to the database");
+        // console.log(url);
+        setOrderSuccess(true);
+    } catch (error) {
+        console.log(error);
+    }
+  } 
+
+  if(orderSuccess) {
+    setTimeout(() => {
+      setOrderSuccess(false);
+    }, 400)
   }
 
   return (
@@ -165,7 +186,7 @@ const Checkout = () => {
               <div className={`${styles.belowTable} flex justify-center items-center flex-col`}>
                 <span className="text-center" styles={{ maxWidth: "100%" }}><p className='text-sm font-extralight'>By placing your order, you agree to our company Privacy Policy & Conditions of Use. </p></span>
                 <div className={`${styles.hr} my-4`}></div>
-                <button className={`${styles.placeOrderbtn} mb-8`}>Place Order</button>
+                <button disabled className={`${styles.placeOrderbtn} mb-8`}>Place Order</button>
               </div>
            </div>
           </div>
@@ -203,7 +224,7 @@ const Checkout = () => {
               <div className={`${styles.belowTable} flex justify-center items-center flex-col`}>
                 <span className="text-center" styles={{ maxWidth: "100%" }}><p className='text-sm font-extralight'>By placing your order, you agree to our company Privacy Policy & Conditions of Use. </p></span>
                 <div className={`${styles.hr} my-4`}></div>
-                <button className={`${styles.placeOrderbtn} mb-8`}>Place Order</button>
+                <button onClick={() => handleSubmitOrder()} className={`${styles.placeOrderbtn} mb-8 hover:shadow-md`}>Place Order</button>
               </div>
            </div>
           </div>
@@ -266,6 +287,11 @@ const Checkout = () => {
           </div>
         </div>
      ) : null}
+     {orderSuccess && (
+        <div className={`${styles.signupSuccess} absolute right-4 rounded-lg shadow-md bg-white p-9 top-2`}>
+            <p className={`text-green-600 font-semibold text-2xl`}>Order Placed Successfully.</p>
+        </div>
+     )}
     </>
   )
 }

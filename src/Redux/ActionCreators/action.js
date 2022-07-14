@@ -181,9 +181,34 @@ const setLabel = (payloadData) => {
     }
 }
 const setNewUser = (payloadData) => {
+    // checking if user exist in local storage
+    const user = window.localStorage.getItem("user");
+    let currentUser;
+    // defining a currentUser if user exit
+    if(user) {
+        currentUser = user;
+    } else {
+        currentUser = null;
+    }
     return (dispatch) => {
         dispatch({
             type: "SET_NEW_USER",
+            payload: currentUser
+        })
+    }
+}
+const setTrigger = (payloadData) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SET_TRIGGER",
+            payload: payloadData
+        })
+    }
+}
+const setSharp = (payloadData) => {
+    return (dispatch) => {
+        dispatch({
+            type: "SET_SHARP",
             payload: payloadData
         })
     }
@@ -201,5 +226,7 @@ export const allActions = {
     setCheckoutDetails,
     setProductDetail,
     setLabel,
-    setNewUser
+    setNewUser,
+    setTrigger,
+    setSharp
 }
